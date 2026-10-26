@@ -1,0 +1,29 @@
+# Environment Configuration & Secrets
+.env
+.env.local
+.env.*.local
+
+# Log and Debug Output
+*.log
+email_logs.txt
+notification_debug.txt
+
+# Generated Reports
+/reports/*.pdf
+/reports/*.html
+!/reports/.gitkeep
+
+# Dependency Management
+/vendor/
+
+# IDE and Editor Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

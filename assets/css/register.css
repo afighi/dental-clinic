@@ -1,0 +1,234 @@
+/**
+ * Registration Page Styles
+ */
+
+ .register-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.register-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.register-info {
+    flex: 1;
+    padding: 40px;
+    background-color: #4a8eff;
+    color: white;
+    display: none; /* Hidden on mobile */
+}
+
+.register-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.register-info p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.benefits {
+    margin-bottom: 40px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.benefit-item i {
+    font-size: 20px;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.register-info img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.register-form-container {
+    flex: 2;
+    padding: 40px;
+}
+
+.register-form-container h2 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.error-message {
+    background-color: #ffe6e6;
+    color: #d92550;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d92550;
+}
+
+.error-message p {
+    margin: 5px 0;
+}
+
+.register-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.register-form .form-group {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.register-form .required {
+    color: #d92550;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"],
+.register-form input[type="tel"],
+.register-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.register-form input:focus,
+.register-form textarea:focus {
+    border-color: #4a8eff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 142, 255, 0.1);
+}
+
+.password-input-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: #4a8eff;
+}
+
+.register-form small {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.terms-agreement {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.terms-agreement input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.terms-agreement label {
+    font-weight: normal;
+}
+
+.terms-agreement a {
+    color: #4a8eff;
+    text-decoration: none;
+}
+
+.terms-agreement a:hover {
+    text-decoration: underline;
+}
+
+.btn-register {
+    width: 100%;
+    background-color: #4a8eff;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-register:hover {
+    background-color: #3b7dfa;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.login-link a {
+    color: #4a8eff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (min-width: 992px) {
+    .register-info {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .register-container {
+        flex-direction: column;
+        max-width: 600px;
+    }
+    
+    .register-form-container {
+        padding: 30px 20px;
+    }
+    
+    .register-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

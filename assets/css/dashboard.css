@@ -1,0 +1,423 @@
+/**
+ * JRC Dental Care - Dashboard CSS
+ * Main stylesheet for the admin dashboard
+ */
+
+ :root {
+    --primary-color: #1806a8;
+    --secondary-color: #e1a2c8;
+    --white-color: #ffffff;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#wrapper {
+    display: flex;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Sidebar Styles
+   ========================================================================== */
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 250px;
+    margin-left: -250px;
+    transition: margin 0.25s ease-out;
+    position: fixed;
+    z-index: 999;
+    background-color: var(--white-color);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+.list-group-item.active {
+    background-color: rgba(24, 6, 168, 0.1);
+    color: var(--primary-color);
+    border-color: transparent;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.list-group-item:hover {
+    background-color: rgba(24, 6, 168, 0.05);
+    color: var(--primary-color);
+}
+
+.sidebar-menu i {
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+/* ==========================================================================
+   Page Content Styles
+   ========================================================================== */
+
+#page-content-wrapper {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    transition: margin-left 0.25s ease-out;
+    margin-left: 0;
+}
+
+/* ==========================================================================
+   Card Styles
+   ========================================================================== */
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    border: none;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    border-bottom: none;
+}
+
+/* Stats Cards */
+.stat-card .card-body {
+    padding: 1.25rem;
+    height: auto;
+    min-height: auto;
+}
+
+.icon-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-body h6 {
+    font-size: 0.875rem;
+    color: #495057;
+}
+
+.card-body h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Chart Cards */
+.chart-card .card-body {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+}
+
+/* Chart Specific Sizing */
+#userRoleChart {
+    height: 200px !important;
+    width: 85% !important;
+    margin: 0 auto;
+}
+
+#serviceDistributionChart {
+    height: 250px !important;
+    width: 100% !important;
+}
+
+/* ==========================================================================
+   Table Styles
+   ========================================================================== */
+
+.table th {
+    font-weight: 600;
+    color: #495057;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(24, 6, 168, 0.03);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* ==========================================================================
+   Color and Button Styles
+   ========================================================================== */
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #140589;
+    border-color: #140589;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Badge Styles */
+.badge-cancelled {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    padding: 0.5em 0.7em;
+}
+
+/* ==========================================================================
+   Navbar Styles
+   ========================================================================== */
+
+.navbar {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+/* ==========================================================================
+   Toggle Sidebar
+   ========================================================================== */
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: 0;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+body.sb-sidenav-toggled .sidebar-overlay {
+    display: block;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        margin-left: 250px;
+    }
+
+    body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+        margin-left: -250px;
+    }
+    
+    body.sb-sidenav-toggled #page-content-wrapper {
+        margin-left: 0;
+    }
+    
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        width: auto;
+        font-size: 1rem;
+    }
+    
+    #sidebarToggle {
+        display: block;
+    }
+    
+    body:not(.sb-sidenav-toggled) #wrapper #sidebar-wrapper {
+        margin-left: -250px;
+    }
+    
+    body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+        margin-left: 0;
+    }
+    
+    body.sb-sidenav-toggled {
+        overflow: hidden;
+    }
+    
+    body.sb-sidenav-toggled::after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+    
+    .navbar .dropdown-menu {
+        position: absolute;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    /* Chart adjustments for tablets */
+    .chart-card .card-body {
+        min-height: 230px;
+    }
+    
+    #userRoleChart {
+        height: 180px !important;
+    }
+    
+    #serviceDistributionChart {
+        height: 200px !important;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .container, .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .icon-container {
+        width: 40px;
+        height: 40px;
+    }
+    
+    h1, .h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.25rem;
+    }
+    
+    .navbar-brand {
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Fix for tables on small screens */
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table th, .table td {
+        white-space: nowrap;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .card-deck {
+        display: block;
+    }
+    
+    .navbar-nav .nav-link {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .badge {
+        font-size: 0.7rem;
+    }
+    
+    /* Chart adjustments for mobile */
+    .chart-card .card-body {
+        min-height: 200px;
+    }
+    
+    #userRoleChart {
+        height: 160px !important;
+    }
+    
+    #serviceDistributionChart {
+        height: 180px !important;
+    }
+    
+    /* Fix for forms on small screens */
+    .form-group {
+        margin-bottom: 0.75rem;
+    }
+    
+    .form-control {
+        font-size: 0.9rem;
+        padding: 0.375rem 0.5rem;
+    }
+}

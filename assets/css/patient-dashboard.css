@@ -1,0 +1,210 @@
+/**
+ * JRC Dental Care - Dashboard CSS
+ */
+
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Primary Color Palette */
+:root {
+    --primary-color: #1806a8;
+    --secondary-color: #e1a2c8;
+    --white-color: #ffffff;
+    --light-gray: #f8f9fa;
+    --dark-gray: #6c757d;
+}
+
+/* Custom Colors */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+    width: 260px;
+    min-height: 100vh;
+    margin-left: -260px;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.list-group-item.active {
+    background-color: rgba(24, 6, 168, 0.1);
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+    font-weight: 500;
+}
+
+/* Page Content Wrapper */
+#page-content-wrapper {
+    min-width: 100vw;
+    padding-bottom: 2rem;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Icon Container */
+.icon-container {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Table Styling */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.table td, .table th {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Responsive sidebar */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+  
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -260px;
+    }
+}
+
+/* Calendar */
+#calendar {
+    height: 100%;
+    min-height: 500px;
+}
+
+/* Notifications */
+.notification-counter {
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Avatar */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* Custom elements */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--primary-color);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767.98px) {
+    .sidebar-menu {
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
+    
+    #calendar {
+        height: 400px;
+    }
+}
+
+/* Tooltip */
+.tooltip-inner {
+    max-width: 250px;
+    padding: 10px;
+}
+
+/* FullCalendar customization */
+.fc-event {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.fc-toolbar-title {
+    font-size: 1.2rem !important;
+    font-weight: 600;
+}
+
+.fc-button-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}

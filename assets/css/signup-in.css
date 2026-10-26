@@ -1,0 +1,334 @@
+/* signup-in.css - Improved styling for JRC Dental Clinic registration */
+
+:root {
+  --primary-color: #6345ff;
+  --accent-color: #4a30d1;
+  --text-dark: #222222;
+  --text-medium: #555555;
+  --text-light: #777777;
+  --error-color: #ff3333;
+  --success-color: #33cc66;
+  --border-color: #e0e0e0;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --input-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background-color: #f5f5ff;
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.register-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px; /* Reduced from 1100px */
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Left panel */
+.left-panel {
+  flex: 0.8; /* Reduced from 1 to make it proportionally smaller */
+  background: linear-gradient(135deg, #6345ff 0%, #8466ff 100%);
+  color: white;
+  padding: 30px; /* Reduced from 40px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.illustration {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 25px; /* Reduced from 30px */
+}
+
+.illustration img {
+  width: 70%; /* Reduced from 80% */
+  max-width: 250px; /* Reduced from 300px */
+  height: auto;
+}
+
+/* Right panel */
+.right-panel {
+  flex: 1; /* Reduced from 1.2 to keep proportion */
+  padding: 30px 40px; /* Reduced from 40px 50px */
+  background-color: var(--white);
+}
+
+/* Logo styling */
+.logo {
+  margin-bottom: 25px; /* Reduced from 30px */
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo-placeholder {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-placeholder span:first-child {
+  font-size: 22px; /* Reduced from 24px */
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo-text {
+  font-size: 15px; /* Reduced from 16px */
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+/* Header styling */
+.register-header {
+  margin-bottom: 30px; /* Reduced from 35px */
+}
+
+.register-header h2 {
+  font-size: 26px; /* Reduced from 28px */
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.register-header p {
+  font-size: 15px; /* Reduced from 16px */
+  color: var(--text-medium);
+}
+
+/* Form styling */
+form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Reduced from 24px */
+}
+
+label {
+  display: block;
+  font-size: 14px; /* Reduced from 15px */
+  font-weight: 500;
+  margin-bottom: 6px; /* Reduced from 8px */
+  color: var(--text-dark);
+}
+
+.input-group {
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  height: 45px; /* Reduced from 50px */
+  padding: 0 15px; /* Reduced from 0 16px */
+  font-size: 14px; /* Reduced from 15px */
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* Reduced from 10px */
+  background-color: var(--input-bg);
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 69, 255, 0.2);
+}
+
+.input-group.has-error .form-control {
+  border-color: var(--error-color);
+}
+
+.error-feedback {
+  display: block;
+  color: var(--error-color);
+  font-size: 12px; /* Reduced from 13px */
+  margin-top: 5px; /* Reduced from 6px */
+}
+
+/* Password visibility toggle */
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; /* Reduced from 24px */
+  height: 22px; /* Reduced from 24px */
+}
+
+.toggle-password:hover {
+  color: var(--primary-color);
+}
+
+/* Button styling */
+.register-btn {
+  display: block;
+  width: 100%;
+  height: 45px; /* Reduced from 50px */
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px; /* Reduced from 10px */
+  font-size: 15px; /* Reduced from 16px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.register-btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Social login styling */
+.social-register {
+  margin: 25px 0; /* Reduced from 30px */
+  text-align: center;
+  position: relative;
+}
+
+.social-register p {
+  display: inline-block;
+  background-color: white;
+  padding: 0 15px;
+  font-size: 13px; /* Reduced from 14px */
+  color: var(--text-medium);
+  position: relative;
+  z-index: 2;
+}
+
+.social-register:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduced from 20px */
+  margin-top: 18px; /* Reduced from 20px */
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; /* Reduced from 48px */
+  height: 42px; /* Reduced from 48px */
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  color: #444;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.social-icon.facebook {
+  color: #3b5998;
+}
+
+.social-icon.linkedin {
+  color: #0077b5;
+}
+
+.social-icon.google {
+  color: #dd4b39;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 25px; /* Reduced from 30px */
+}
+
+.login-link p {
+  font-size: 14px; /* Reduced from 15px */
+  color: var(--text-medium);
+}
+
+.login-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) { /* Changed from 900px for earlier breakpoint */
+  .register-container {
+    flex-direction: column;
+    max-width: 500px; /* Added max-width for smaller screens */
+  }
+  
+  .left-panel {
+    display: none;
+  }
+  
+  .right-panel {
+    padding: 30px 25px; /* Further reduced padding */
+  }
+}
+
+@media (max-width: 500px) {
+  .register-container {
+    max-width: 100%; /* Allow full width on very small screens */
+  }
+  
+  .right-panel {
+    padding: 25px 20px; /* Further reduced */
+  }
+  
+  .register-header h2 {
+    font-size: 22px; /* Reduced from 24px */
+  }
+  
+  .form-control {
+    height: 42px; /* Reduced from 46px */
+  }
+  
+  .register-btn {
+    height: 42px; /* Reduced from 46px */
+  }
+}

@@ -1,0 +1,349 @@
+/**
+ * Verification Pages Styles
+ * For verify-registration.php and verify-password.php
+ */
+
+ .verify-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #777;
+    font-size: 16px;
+}
+
+.verify-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.alert i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.alert-success {
+    background-color: #e6f7ee;
+    color: #2e844a;
+    border-left: 4px solid #2e844a;
+}
+
+.alert-error {
+    background-color: #ffe6e6;
+    color: #d92550;
+    border-left: 4px solid #d92550;
+}
+
+.email-sent-message {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: #e6f0ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.icon-container i {
+    font-size: 36px;
+    color: #4a8eff;
+}
+
+.email-sent-message h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.email-sent-message p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.email-sent-message .note {
+    color: #777;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.resend-form-container {
+    margin: 30px 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.resend-form-container h4 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.btn-resend {
+    background-color: transparent;
+    color: #4a8eff;
+    border: 1px solid #4a8eff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-resend:hover {
+    background-color: #f0f7ff;
+}
+
+.alternate-options {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.alternate-options p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.email-form .form-group {
+    margin-bottom: 20px;
+}
+
+.email-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.email-form input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.email-form input[type="email"]:focus {
+    border-color: #4a8eff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 142, 255, 0.1);
+}
+
+.btn-primary {
+    background-color: #4a8eff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #3b7dfa;
+}
+
+.additional-options {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.additional-options p {
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.additional-options a {
+    color: #4a8eff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.additional-options a:hover {
+    text-decoration: underline;
+}
+
+/* User verification styles */
+.user-info-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #e6f0ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.user-avatar i {
+    font-size: 36px;
+    color: #4a8eff;
+}
+
+.user-info-section h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.user-info-section p {
+    color: #777;
+}
+
+.verify-form .form-group {
+    margin-bottom: 25px;
+}
+
+.verify-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.verify-form .required {
+    color: #d92550;
+}
+
+.password-input-container {
+    position: relative;
+}
+
+.verify-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.verify-form input[type="password"]:focus {
+    border-color: #4a8eff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 142, 255, 0.1);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: #4a8eff;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #eee;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 15px;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .card-body {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}

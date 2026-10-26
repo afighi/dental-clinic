@@ -1,0 +1,784 @@
+/* 
+ * JRC Dental Care - Admin Dashboard
+ * Main CSS Styles
+ */
+
+ :root {
+    --primary: #3C096C;
+    --secondary: #e1a2c8;
+    --light: #EFF1ED;
+    --dark: #212529;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 70px;
+    --topbar-height: 60px;
+    --card-box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    --card-border-radius: 0.5rem;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+}
+
+/* Common Styles */
+.d-flex {
+    display: flex !important;
+}
+
+.btn-primary {
+    background-color: #7B2CBF;
+    border-color: #7B2CBF;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #9D4EDD;
+    border-color: #9D4EDD;
+}
+
+.btn-outline-primary {
+    color: #FFF;
+    border-color: #E0AAFF;
+    border-radius: 8px;
+}
+
+.btn-outline-primary-services {
+    color: #7B2CBF;
+    border-color: #7B2CBF;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background-color: #7B2CBF;
+    border-color: #7B2CBF;
+    color: #fff;
+}
+
+.text-primary {
+    color: #C77DFF !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+/* Layout */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--light);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    transition: width var(--transition-speed) ease, transform var(--transition-speed) ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.content-wrapper {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    transition: margin-left var(--transition-speed) ease, width var(--transition-speed) ease;
+}
+
+.content-wrapper.expanded {
+    margin-left: var(--sidebar-collapsed-width);
+    width: calc(100% - var(--sidebar-collapsed-width));
+}
+
+.content {
+    padding: 30px;
+    min-height: calc(100vh - var(--topbar-height));
+}
+
+/* Topbar */
+.topbar {
+    height: var(--topbar-height);
+    background-color: var(--light);
+    border-bottom: 1px solid #eee;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-toggler {
+    background: none;
+    border: none;
+    color: var(--dark);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Sidebar */
+.sidebar .logo {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--topbar-height);
+}
+
+.sidebar.collapsed .logo img {
+    height: 40px;
+}
+
+.sidebar .nav-item {
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link {
+    color: #666;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(60, 9, 108, 0.05);
+    color: var(--primary);
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 500;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar.collapsed .nav-link span,
+.sidebar.collapsed .sidebar-heading {
+    display: none;
+}
+
+.sidebar.show .nav-link span,
+.sidebar.show .sidebar-heading {
+    display: inline;
+}
+
+.sidebar-heading {
+    padding: 15px 20px 10px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #666;
+    font-weight: 500;
+    padding: 8px 16px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+/* Notification Badge */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.notification-item.unread {
+    background-color: rgba(60, 9, 108, 0.05);
+}
+
+/* User Dropdown */
+.user-dropdown {
+    position: relative;
+    margin-left: auto;
+}
+
+.user-dropdown img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-dropdown .dropdown-toggle::after {
+    display: none;
+}
+
+.user-dropdown .dropdown-menu {
+    width: 200px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.25rem;
+}
+
+.card-body {
+    padding: 25px;
+    
+}
+
+/* Tables */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(60, 9, 108, 0.02);
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(60, 9, 108, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+/* Status Indicators */
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.status-completed {
+    background-color: #10b981;
+}
+
+.status-pending {
+    background-color: #f59e0b;
+}
+
+.status-cancelled {
+    background-color: #ef4444;
+}
+
+/* Alerts */
+.alert {
+    border-radius: var(--card-border-radius);
+}
+
+/* Tabs */
+.nav-tabs .nav-link.active {
+    color: var(--primary);
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+/* DataTables */
+div.dataTables_wrapper div.dataTables_length select {
+    width: 60px;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0.5em;
+    width: 200px;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+/* Progress bars */
+.progress {
+    height: 5px;
+    background-color: #f0f0f0;
+}
+
+/* Modals */
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Hero Banner */
+.hero {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.hero-banner {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-content {
+    padding-top: 200px;
+    padding-bottom: 80px;
+    color: var(--light);
+}
+
+/* Feature Icon */
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OTP Input */
+.otp-input-container {
+    margin: 0 auto;
+}
+
+.otp-input-container input {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    text-align: center;
+    max-width: 200px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: var(--sidebar-collapsed-width);
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        width: var(--sidebar-width);
+    }
+    
+    .content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .sidebar-toggler {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-toggler {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 400px;
+    }
+    
+    .hero-content {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    .card-header .btn-group {
+        margin-top: 0.5rem;
+    }
+    
+    .topbar .user-dropdown .text-end {
+        display: none;
+    }
+}
+/* Rounded Card Styles */
+.rounded-card {
+    border-radius: 1.5rem !important;
+    overflow: hidden;
+}
+
+.rounded-card .left-panel {
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
+/* You can also update your --card-border-radius variable in your main CSS */
+:root {
+    --card-border-radius: 1.5rem;
+}
+
+/* Update your form styling for consistency across all auth pages */
+.auth-input {
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e1e1e1;
+}
+
+.auth-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(60, 9, 108, 0.2);
+}
+
+.auth-btn {
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Add responsive styling for mobile devices */
+@media (max-width: 768px) {
+    .rounded-card {
+        margin: 1rem;
+    }
+}
+
+/* Add this to your style.css file */
+.auth-link {
+    color: #3C096C;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    color: #7B2CBF;
+    text-decoration: underline;
+}
+
+/* Add this to your style.css file */
+.auth-container-bg {
+    background-image: url('../images/containerbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+}
+
+/* Optional: add a slight overlay to ensure text remains readable if background is busy */
+.auth-container-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* white overlay with 20% opacity */
+    z-index: -1;
+}
+
+/* Add this to your style.css file */
+body.auth-page {
+    background-image: url('../images/containerbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Optional: add a slight overlay to ensure text remains readable if background is busy */
+body.auth-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* white overlay with 10% opacity */
+    z-index: -1;
+}
+
+/* 
+ * JRC Dental Care - Responsive Fixes
+ * Add these CSS rules to your style.css file
+ */
+
+/* Fix navbar and menu responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .navbar-brand img {
+        height: 40px; /* Reduce logo size on mobile */
+    }
+    
+    .navbar-toggler {
+        padding: 4px 8px;
+        margin-right: 0;
+    }
+    
+    .navbar-collapse {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+    }
+
+    /* Ensure menu items stack properly */
+    .navbar-nav {
+        margin-bottom: 10px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-bottom: 5px;
+    }
+    
+    /* Fix login/register button positioning */
+    .navbar-nav .nav-item .btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    /* Fix for login/register buttons on mobile */
+    .nav-link.btn {
+        text-align: center;
+        padding: 8px 16px;
+        margin: 5px 0;
+    }
+}
+
+/* Fix hero section responsiveness */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: auto;
+        min-height: 350px;
+    }
+    
+    .hero-content {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        color: white; /* Ensure text is visible */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Improve readability */
+    }
+    
+    /* Make buttons responsive */
+    .hero-content .btn {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .hero-content .d-sm-flex {
+        flex-direction: column;
+    }
+    
+    /* Make text more readable on mobile */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Fix "Book Appointment" button */
+@media (max-width: 768px) {
+    section#home {
+        margin-bottom: 70px; /* Add space below hero section */
+    }
+    
+    .book-appointment-button {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 100;
+        bottom: -35px;
+    }
+}
+
+/* Fix service cards responsiveness */
+@media (max-width: 768px) {
+    #services .card {
+        margin-bottom: 15px;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Fix testimonials section */
+@media (max-width: 576px) {
+    .testimonial-card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Fix contact section */
+@media (max-width: 768px) {
+    #contact .row {
+        flex-direction: column;
+    }
+    
+    #contact .col-lg-6 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Fix footer responsiveness */
+@media (max-width: 768px) {
+    footer .row > div {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    footer .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+    
+    footer .list-unstyled {
+        text-align: left;
+        margin: 0 auto;
+        display: inline-block;
+    }
+}
+
+/* Fix colors and appearance */
+.btn-primary {
+    background-color: #7B2CBF;
+    border-color: #7B2CBF;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #9D4EDD;
+    border-color: #9D4EDD;
+}
+
+.nav-link.btn.btn-primary.text-white {
+    background-color: #7B2CBF;
+    border-color: #7B2CBF;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    color: #7B2CBF;
+    border-color: #7B2CBF;
+}
+
+.btn-outline-primary:hover {
+    background-color: #7B2CBF;
+    border-color: #7B2CBF;
+}
+
+/* Fix any additional spacing issues */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+@media (max-width: 576px) {
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
