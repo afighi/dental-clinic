@@ -6,7 +6,7 @@ A comprehensive web-based dental practice management platform engineered to stre
 
 ## Academic Context
 
-This project was originally designed and developed during my second year of college as a primary capstone project for the **Database Systems** course. The objective was to architect a robust, fully-normalized relational database system and build a complete web application utilizing secure transaction handling, relational integrity, role-based security, and automated clinical reporting.
+This project was originally designed and developed during my second year of college as a primary project for the **Database Systems** course. The objective was to architect a robust, fully-normalized relational database system and build a complete web application utilizing secure transaction handling, relational integrity, role-based security, and automated clinical reporting.
 
 ---
 
